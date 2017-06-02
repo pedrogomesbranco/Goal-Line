@@ -353,7 +353,7 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         if ((firstBody.categoryBitMask & CollisionCategories.Opponent != 0) &&
-            (secondBody.categoryBitMask & CollisionCategories.PlayerBall != 0) &&  timer.text != "Time to throw: 0s") {
+            (secondBody.categoryBitMask & CollisionCategories.PlayerBall != 0)) {
             if (contact.bodyA.node?.parent == nil || contact.bodyB.node?.parent == nil) {
                 return
             }
@@ -368,17 +368,22 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
             if (contact.bodyA.node?.parent == nil || contact.bodyB.node?.parent == nil){
                 return
             }
+           
+            
             remove2(secondBody.node as! SKSpriteNode)
             
         }
         
         if ((firstBody.categoryBitMask & CollisionCategories.Friend != 0) &&
-            (secondBody.categoryBitMask & CollisionCategories.PlayerBall != 0) &&  timer.text != "Time to throw: 0s") {
+            (secondBody.categoryBitMask & CollisionCategories.PlayerBall != 0)) {
             if (contact.bodyA.node?.parent == nil || contact.bodyB.node?.parent == nil) {
                 return
             }
+             print("bateu 454544")
             remove(firstBody.node as! SKSpriteNode, ball: secondBody.node as! SKSpriteNode)
-            endGame()
+            if(timer.text != "Time to throw: 0s"){
+                endGame()
+            }
         }
     }
     

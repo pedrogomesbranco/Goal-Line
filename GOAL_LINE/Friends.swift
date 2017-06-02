@@ -18,13 +18,12 @@ class Friends: SKSpriteNode {
         self.physicsBody?.isDynamic = true
         self.physicsBody?.usesPreciseCollisionDetection = false
         self.physicsBody?.categoryBitMask = CollisionCategories.Friend
-        self.physicsBody?.contactTestBitMask = CollisionCategories.PlayerBall
+        self.physicsBody?.contactTestBitMask = CollisionCategories.PlayerBall | CollisionCategories.PlayerBall | CollisionCategories.Friend
         self.physicsBody?.collisionBitMask = 0x0
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
     
 }

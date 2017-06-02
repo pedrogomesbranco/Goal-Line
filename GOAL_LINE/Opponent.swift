@@ -19,7 +19,7 @@ class Opponent: SKSpriteNode {
         self.physicsBody?.isDynamic = true
         self.physicsBody?.usesPreciseCollisionDetection = false
         self.physicsBody?.categoryBitMask = CollisionCategories.Opponent
-        self.physicsBody?.contactTestBitMask = CollisionCategories.PlayerBall
+        self.physicsBody?.contactTestBitMask = CollisionCategories.PlayerBall | CollisionCategories.Opponent 
         self.physicsBody?.collisionBitMask = 0x0
     }
     
